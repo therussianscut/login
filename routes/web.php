@@ -26,3 +26,5 @@ Route::get('/admin', function(){
     return 'you are admin';
 
 })->middleware(['auth', 'auth.admin']);
+
+Route::resource('/users', 'Admin\UserController', ['except' => ['show', 'create', 'store' ]]);
