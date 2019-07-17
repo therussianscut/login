@@ -27,7 +27,7 @@
                     {{ config('app.name', 'Laravel') }}
                 </a>
 
-                <a href="{{ route('users.index') }}">
+                <a href="{{ route('admin.users.index') }}">
 
                     Manage Users
 

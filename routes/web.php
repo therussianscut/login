@@ -28,3 +28,10 @@ Route::get('/admin', function(){
 })->middleware(['auth', 'auth.admin']);
 
 Route::resource('/users', 'Admin\UserController', ['except' => ['show', 'create', 'store' ]]);
+
+Route::namespace('admin')->prefix('admin')->middleware(['auth', 'auth.admin'])->name('admin.')->group(function (){
+
+    Route::resource('/users', 'UserController', ['except' => ['show', 'create', 'store' ]]);
+
+
+});
