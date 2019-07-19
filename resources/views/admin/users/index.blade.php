@@ -35,9 +35,29 @@
                             <th> {{$user->name}}</th>
                             <th>  {{$user->email}}</th>
                             <th>  {{implode(', ', $user->roles()->get()->pluck('name')->toArray())}} </th>
-                            <th> <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary"> Edit</a>  </th>
+                            <th> <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary"> Edit</a>
+
+
+                                <form  action="{{ route('admin.users.destroy', $user->id) }} "   method="POST" class="float-left">
+                                    @csrf
+                                    @method('delete')
+
+                                    <button type="submit"class="btn btn-danger"> Delete</button>
+
+
+
+                                </form>
+
+
+
+
+                            </th>
+
+
 
                         </tr>
+
+
 
 
 
