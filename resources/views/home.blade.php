@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@include('cookieConsent::index')
 
 @section('content')
 <div class="container">

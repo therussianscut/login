@@ -84,6 +84,7 @@
         </nav>
 
         <main class="py-4">
+            @include('cookieConsent::index')
             @include('partials.alerts')
             @yield('content')
 
