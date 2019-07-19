@@ -32,6 +32,9 @@ Route::resource('/users', 'Admin\UserController', ['except' => ['show', 'create'
 Route::namespace('admin')->prefix('admin')->middleware(['auth', 'auth.admin'])->name('admin.')->group(function (){
 
     Route::resource('/users', 'UserController', ['except' => ['show', 'create', 'store' ]]);
+    Route::get('/impersonate/user/{id}', 'ImpersonateController@index')->name('impersonate');
 
 
 });
+
+Route::get('/admin/impersonate/destroy', 'Admin\ImpersonateController@destroy')->name('admin.impersonate.destroy');

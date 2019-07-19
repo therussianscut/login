@@ -36,6 +36,7 @@
                             <th>  {{$user->email}}</th>
                             <th>  {{implode(', ', $user->roles()->get()->pluck('name')->toArray())}} </th>
                             <th> <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary"> Edit</a>
+                                <a href="{{ route('admin.impersonate', $user->id) }}" class="btn btn-success"> Impersonate User</a>
 
 
                                 <form  action="{{ route('admin.users.destroy', $user->id) }} "   method="POST" class="float-left">
